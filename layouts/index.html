@@ -13,7 +13,9 @@ jQuery(document).ready(function($) {
         skills: "list core skills",
         softskills: "list soft skills",
         languages: "list spoken languages",
+        {{ if .Site.Params.projects }} 
         projects: "list projects",
+	{{ end }}
         {{ if .Site.Params.certifications }} 
             certifications: "list certifications",
         {{ end }}

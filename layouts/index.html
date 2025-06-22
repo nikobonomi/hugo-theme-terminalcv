@@ -46,8 +46,8 @@ jQuery(document).ready(function($) {
 
     function progressBar(number) {
         var barLength = Math.round(number / 10);
-        var barFilled = Array(barLength + 1).join("&#9611;");
-        var barBlank= Array(11 - barLength).join("&#9617;");
+        var barFilled = Array(barLength + 1).join("#");
+        var barBlank= Array(11 - barLength).join("_");
 
         return barFilled + barBlank
     }
@@ -216,7 +216,7 @@ jQuery(document).ready(function($) {
     {{ with .Site.Params.skills.details }}
         {{ range . }}
             '[[b;{{ .color | default "grey" }};]{{ .name }}:]\n' +
-            progressBar({{ .percentage }}) +
+            '['+ progressBar({{ .percentage }}) + '] ' +
             '{{ .percentage }}' + '%\n' +
             {{ if .description }}
             '{{ .description }}\n' +
